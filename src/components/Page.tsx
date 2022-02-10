@@ -1,5 +1,13 @@
 import styled from 'styled-components';
 
+interface Props {
+  children: React.ReactNode;
+}
+
+export const Page = ({ children }: Props) => (
+  <StyledPage>{children}</StyledPage>
+);
+
 export const StyledPage = styled.main`
   background-color: ${(props) => props.theme.colors.background};
   height: 100%;

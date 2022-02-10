@@ -1,18 +1,18 @@
 import { useState, useEffect, useRef } from 'react';
 
-import { Page } from './components/Page/Page';
-import { Wrapper } from './components/clock/Wrapper/Wrapper';
-import { Title } from './components/clock/Title/Title';
-import { ControlWrapper } from './components/clock/ControlWrapper/ControlWrapper';
-import { Control } from './components/clock/Control/Control';
-import { Timer } from './components/clock/Timer/Timer';
-import { TimerControl } from './components/clock/TimerControl/TimerControl';
+import { Page } from './components/Page';
+import { Wrapper } from './components/Wrapper';
+import { Title } from './components/Title';
+import { ControlWrapper } from './components/ControlWrapper';
+import { Control } from './components/Control';
+import { Timer } from './components/Timer';
+import { TimerControl } from './components/TimerControl';
 
 const DEFAULT_STATE = {
   sessionLength: 25,
   breakLength: 5,
   isActive: false,
-  mode: 'session',
+  mode: 'Session',
 };
 
 function App() {
@@ -49,11 +49,11 @@ function App() {
         alarm.current.play();
       }
 
-      if (state.mode === 'session') {
-        setState({ ...state, mode: 'break' });
+      if (state.mode === 'Session') {
+        setState({ ...state, mode: 'Break' });
         setDisplayTime(state.breakLength * 60);
-      } else if (state.mode === 'break') {
-        setState({ ...state, mode: 'session' });
+      } else if (state.mode === 'Break') {
+        setState({ ...state, mode: 'Session' });
         setDisplayTime(state.sessionLength * 60);
       }
     }

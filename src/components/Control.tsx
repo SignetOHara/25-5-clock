@@ -1,4 +1,4 @@
-import { StyledControl, StyledButton, StyledControlButtons } from './styles';
+import styled from 'styled-components';
 import { FaArrowDown, FaArrowUp } from 'react-icons/fa';
 
 interface Props {
@@ -33,3 +33,19 @@ export const Control = ({
     </StyledControlButtons>
   </StyledControl>
 );
+
+const StyledControl = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
+const StyledControlButtons = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+`;
+
+const StyledButton = styled.button`
+  background-color: ${(props) => props.theme.colors.background};
+  cursor: pointer;
+`;
